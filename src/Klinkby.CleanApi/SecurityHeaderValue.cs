@@ -1,4 +1,4 @@
-namespace Clean;
+namespace Klinkby.CleanApi;
 
 /// <summary>
 /// Response headers to harden the service as recommended by https://observatory.mozilla.org/faq/

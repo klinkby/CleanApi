@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Net;
 using System.Threading.RateLimiting;
 
-namespace Clean;
+namespace Klinkby.CleanApi;
 
 /// <summary>
 /// A token bucket rate limiter is partitioned by the user's identity (if authenticated) or IP address. 

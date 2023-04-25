@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Diagnostics;
 
-namespace Clean;
+namespace Klinkby.CleanApi;
 
 /// <summary>
 /// A health check that reports the current memory usage.

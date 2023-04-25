@@ -1,9 +1,8 @@
-using Clean;
-using Clean.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Net;
+using Klinkby.CleanApi;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

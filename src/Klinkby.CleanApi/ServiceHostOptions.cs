@@ -1,7 +1,7 @@
 using Microsoft.OpenApi.Models;
 using System.Threading.RateLimiting;
 
-namespace Clean;
+namespace Klinkby.CleanApi;
 
 /// <summary>
 /// Options for the service host middleware configuration
