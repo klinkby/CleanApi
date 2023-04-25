@@ -2,6 +2,12 @@
   "version": 1,
   "dependencies": {
     "net7.0": {
+      "Klinkby.CleanApi.Abstractions": {
+        "type": "Direct",
+        "requested": "[1.0.2, )",
+        "resolved": "1.0.2",
+        "contentHash": "flAqm6tK3TiO7UqzMRkTJlbMlGu6EoLo9dUxHtvu+427Vfh2EVkG8lNVt6CsnazVYkmqR89Y+MFTrO9ca+MPOg=="
+      },
       "Microsoft.AspNetCore": {
         "type": "Direct",
         "requested": "[2.2.0, )",
