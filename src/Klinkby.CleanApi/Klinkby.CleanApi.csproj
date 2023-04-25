@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>Klinkby.CleanApi</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Klinkby.CleanApi.Abstractions" Version="1.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+		<PackageReference Include="Microsoft.OpenApi" Version="1.4.3" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions"
+			Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Http.Polly" Version="7.0.3" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.*" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<PackageVersion>1.0.0</PackageVersion>
+		<TargetFrameworks>net7.0</TargetFrameworks>
+		<AssemblyName>Klinkby.CleanApi</AssemblyName>
+		<AssemblyTitle>Klinkby.CleanApi</AssemblyTitle>
+		<PackageId>Klinkby.CleanApi</PackageId>
+		<Authors>@klinkby</Authors>
+		<RepositoryUrl>https://github.com/klinkby/CleanApi</RepositoryUrl>
+		<!--    <PackageIcon>CleanApi.png</PackageIcon> -->
+		<PackageTags>Clean Api AspNet</PackageTags>
+		<Description>Implementation for Clean Api</Description>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="../../LICENSE" Pack="true" PackagePath="" />
+		<None Include="../../README.md" Pack="true" PackagePath="" />
+		<!--      <None Include="../../CleanApi.png" Pack="true" PackagePath="" /> -->
+	</ItemGroup>
+
+	<PropertyGroup>
+		<!--
+		https://devblogs.microsoft.com/nuget/enable-repeatable-package-restores-using-a-lock-file/ -->
+		<RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+	</PropertyGroup>
+
+</Project>
