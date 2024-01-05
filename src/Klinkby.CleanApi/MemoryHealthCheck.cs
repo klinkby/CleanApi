@@ -1,32 +1,29 @@
-﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
-using System.Diagnostics;
+﻿using System.Diagnostics;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace Klinkby.CleanApi;
 
 /// <summary>
-/// A health check that reports the current memory usage.
+///     A health check that reports the current memory usage.
 /// </summary>
 internal class MemoryHealthCheck : IHealthCheck
 {
-    const int MegaBitShift = 20; // >>20 == /1,048,576
-    const float Percent100 = 100.0f;
-    const float Percent90 = 90.0f;
-    const float Percent80 = 80.0f;
+    private const int MegaBitShift = 20; // >>20 == /1,048,576
+    private const float Percent100 = 100.0f;
+    private const float Percent90 = 90.0f;
+    private const float Percent80 = 80.0f;
 
     /// <summary>
-    /// Report the service process memory consumption.
+    ///     Report the service process memory consumption.
     /// </summary>
     public Task<HealthCheckResult> CheckHealthAsync(
         HealthCheckContext context,
         CancellationToken cancellationToken = default)
     {
-        long allocatedMB = Process.GetCurrentProcess().PrivateMemorySize64 >> MegaBitShift;
-        long totalMB = GC.GetGCMemoryInfo().TotalAvailableMemoryBytes >> MegaBitShift;
-        if (0 == totalMB)
-        {
-            return Task.FromResult(HealthCheckResult.Unhealthy("Total memory is zero"));
-        }
-        float pctAllocated = (allocatedMB * Percent100) / totalMB;
+        var allocatedMb = Process.GetCurrentProcess().PrivateMemorySize64 >> MegaBitShift;
+        var totalMb = GC.GetGCMemoryInfo().TotalAvailableMemoryBytes >> MegaBitShift;
+        if (0 == totalMb) return Task.FromResult(HealthCheckResult.Unhealthy("Total memory is zero"));
+        var pctAllocated = allocatedMb * Percent100 / totalMb;
         var status = pctAllocated switch
         {
             >= Percent90 => HealthStatus.Unhealthy,
@@ -34,13 +31,13 @@ internal class MemoryHealthCheck : IHealthCheck
             _ => HealthStatus.Healthy
         };
         var result = new HealthCheckResult(
-             status,
-             data: new SortedList<string, object>(3)
-             {
-                 { nameof(allocatedMB), allocatedMB },
-                 { nameof(pctAllocated), pctAllocated },
-                 { nameof(totalMB), totalMB }
-             });
+            status,
+            data: new SortedList<string, object>(3)
+            {
+                { nameof(allocatedMb), allocatedMb },
+                { nameof(pctAllocated), pctAllocated },
+                { nameof(totalMb), totalMb }
+            });
         return Task.FromResult(result);
     }
 }

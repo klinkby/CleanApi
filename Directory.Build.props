@@ -1,0 +1,17 @@
+﻿<Project>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <LangVersion>preview</LangVersion>
+        
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <IsAotCompatible>true</IsAotCompatible>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <ServerGarbageCollection>false</ServerGarbageCollection>
+        <InvariantGlobalization>true</InvariantGlobalization>
+
+        <!--https://devblogs.microsoft.com/nuget/enable-repeatable-package-restores-using-a-lock-file/ -->
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    </PropertyGroup>
+</Project>

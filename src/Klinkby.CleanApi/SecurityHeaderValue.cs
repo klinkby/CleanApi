@@ -1,7 +1,7 @@
 namespace Klinkby.CleanApi;
 
 /// <summary>
-/// Response headers to harden the service as recommended by https://observatory.mozilla.org/faq/
+///     Response headers to harden the service as recommended by https://observatory.mozilla.org/faq/
 /// </summary>
 internal static class SecurityHeaderValue
 {
